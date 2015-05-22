@@ -20,6 +20,9 @@
   <!-- Bootstrap Carousel CSS -->
     <link rel="stylesheet" href="styles/half-slider.css" type="text/css" media="screen" />
 
+    <!-- jQuery -->
+    <script src="scripts/jquery.js"></script>
+
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -78,7 +81,6 @@
             <!-- Bootstrap Carousel -->
 
     <!-- Half Page Image Background Carousel Header -->
-  
     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -172,6 +174,39 @@
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
+    </script>
+
+    <!-- Script for the Kitten List -->
+
+    <script>
+    $(document).ready(function() {
+      displayAnimals();
+      console.log('ready!');
+    });
+
+    function displayAnimals() {
+      var animals = initAnimals();
+      var $kittenList = $("#kitten-list");
+      $kittenList.html(" ");
+      $.each(animals.kittens, function(index, kitten){
+              $kittenList.append("<div class='box'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.imageUrl+"' alt='' height=100 width=100>"+kitten.age+"<br>Size: "+kitten.sex+"<br>Breed: "+kitten.Breed+"</div></div>");
+
+            });
+
+
+    };
+
+    function initAnimals(){
+        var animals = {
+        "kittens":[
+            {"name": "Esther", "age": "2 months", "sex":"F", "Breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
+           ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "Breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
+           ,{"name": "Lilly", "age": "4 months", "sex":"F", "Breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
+          ]
+        };
+          return(animals);
+      }
+      console.log(initAnimals);
     </script>
 
 
