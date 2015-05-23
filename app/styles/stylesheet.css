@@ -190,3 +190,8 @@ footer p {
         clear: both;
     }
 }
+
+#carousel-example-generic {
+    width: 650px;
+    margin: 0 auto
+}
