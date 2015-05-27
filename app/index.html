@@ -119,70 +119,12 @@
             </div>
         </div>
 
-
-
-<!-- ******************************************************** -->
-  <!-- Bootstrap Carousel CSS -->
-<!--     <link rel="stylesheet" href="css/half-slider.css" type="text/css" media="screen" /> -->
-
-            <!-- Bootstrap Carousel -->
-
-    <!-- Half Page Image Background Carousel Header -->
-<!--     <header id="myCarousel" class="carousel slide"> -->
-        <!-- Indicators -->
-<!--         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol> -->
-        <!-- Wrapper for Slides -->
-<!--         <div class="carousel-inner">
-            <div class="item active"> -->
-                <!-- Set the first background image using inline CSS below. -->
-<!--                 <div class="fill" style="background-image:url('img/Kitten1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-            <div class="item"> -->
-                <!-- Set the second background image using inline CSS below. -->
-<!--                 <div class="fill" style="background-image:url('img/Kitten2.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-            <div class="item"> -->
-                <!-- Set the third background image using inline CSS below. -->
-<!--                 <div class="fill" style="background-image:url('img/Kitten3.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-        </div>
-
-<br> -->
-        <!-- Controls -->
-<!--         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a> -->
-<!--      ************************************************** -->
-
-
-
        <!-- Kitten List -->
     <div id="kitten-list" class="col-md-12">
     </div>
 
-    <div class="row">
-      <div class="text-center">
-        <h2>Kitten for Adoption?</h2>
-      </div>
-    </div>
 
-    <div class="row">
+<!--     <div class="row">
        <div class="text-center">
         <form class="theForm" action="#d">
           <legend for="kitten">Add a Kitten</legend>
@@ -193,7 +135,71 @@
           <button id="addButton">Add Kitten to Adopt</button>
         </form>
        </div>
-    </div>
+    </div> -->
+
+
+
+    <!-- Adding a new "add a kitten" list based off of class example -->
+<div class="container">
+    <div clas="text-center">
+        <h1>Kitten For Adoption?</h1>
+          <form id="theForm" action="#">
+          <legend for="word">Kitty Name</legend>
+          <input type="text" id="word" />
+          <legend for="definition">Description</legend>
+          <textarea name="definition" id="definition" ></textarea>
+          <br>
+          <button id="addButton">Add It!</button>
+
+    </form>
+    <h2>New Adoption List</h2>
+    <dl id="wordList"></dl>
+   </div>     
+</div>
+        <script>
+      $(document).ready( function(){
+        displayDictionary(getDictionary());
+        $("#addButton").click(addWord);
+      });
+
+      function addWord(e) {
+        var entry = {};
+        entry.word = $("#word").val();
+        entry.definition = $("#definition").val();
+        var dictionary = getDictionary();
+        dictionary.push(entry);
+        saveDictionary(dictionary);
+        displayDictionary(getDictionary());
+        e.preventDefault();
+      }
+
+      function displayDictionary(d){
+        $wordList = $('#wordList');
+        $wordList.html(" ");
+        $.each(d, function(index, entry){
+          $wordList.append("<dt>" + entry.word + "</dt><dd>" + entry.definition + "</dd>");
+        });
+      }
+      function saveDictionary(d) {
+        localStorage.setItem('theDictionary', JSON.stringify(d));
+      }
+
+      function getDictionary(){
+        if (localStorage.getItem('theDictionary') === null){
+          return(initDictionary());
+        } else {
+          return(JSON.parse(localStorage.getItem('theDictionary')));
+        }
+      }
+
+      // function initDictionary(){
+      //   var defaultDictionary = [
+      //       {word: "foo", definition: "See 'bar'"},
+      //       {word: "bar", definition: "See 'foo'"}
+      //     ];
+      //   return(defaultDictionary);
+      // }
+    </script>
 
 
     <!-- build:js(.) scripts/vendor.js -->
