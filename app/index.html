@@ -251,7 +251,7 @@
       var $kittenList = $("#kitten-list");
       $kittenList.html(" ");
       $.each(animals.kittens, function(index, kitten){
-              $kittenList.append("<div class='box'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.imageUrl+"' alt='' height=100 width=100>"+kitten.age+"<br>Size: "+kitten.sex+"<br>Breed: "+kitten.Breed+"</div></div>");
+              $kittenList.append("<div class='box'><div class='text-center'><div class='panel-body'><img class='thumbnail center-block' src='"+kitten.imageUrl+"' alt='' height=100 width=100><br>"+kitten.name+"<br>"+kitten.age+"<br>Size: "+kitten.sex+"<br>Breed: "+kitten.Breed+"</div></div></div>");
 
             });
 
