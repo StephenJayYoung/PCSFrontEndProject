@@ -153,13 +153,14 @@
 <!--         <input id="fileupload" type="file" name="files[]" multiple>
         </span> -->
         <!-- End Jquery fiel upload button -->
-          <form id="theForm" action="#">
-          <legend for="word">Kitty Name</legend>
-          <input type="text" id="word" />
-          <legend for="definition">Description</legend>
-          <textarea name="definition" id="definition" ></textarea>
+      <form class="theForm" action="#">
+          <legend for="kitten">Add a Kitten</legend>
+          <input type="text" id="kitten"/>
+          <legend for="description">Description</legend>
+          <textarea name="description" id="description"></textarea>
           <br>
-          <button id="addButton">Add It!</button>
+          <button id="addButton">Add Kitten</button>
+        </form>
 
     </form>
     <h2>New Adoption List</h2>
@@ -224,50 +225,7 @@
 <!-- end Jquery file upload -->
 
 <!-- stuff for adding kitten descriptions -->
-        <script>
-      $(document).ready( function(){
-        displayDictionary(getDictionary());
-        $("#addButton").click(addWord);
-      });
 
-      function addWord(e) {
-        var entry = {};
-        entry.word = $("#word").val();
-        entry.definition = $("#definition").val();
-        var dictionary = getDictionary();
-        dictionary.push(entry);
-        saveDictionary(dictionary);
-        displayDictionary(getDictionary());
-        e.preventDefault();
-      }
-
-      function displayDictionary(d){
-        $wordList = $('#wordList');
-        $wordList.html(" ");
-        $.each(d, function(index, entry){
-          $wordList.append("<dt>" + entry.word + "</dt><dd>" + entry.definition + "</dd>");
-        });
-      }
-      function saveDictionary(d) {
-        localStorage.setItem('theDictionary', JSON.stringify(d));
-      }
-
-      function getDictionary(){
-        if (localStorage.getItem('theDictionary') === null){
-          return(initDictionary());
-        } else {
-          return(JSON.parse(localStorage.getItem('theDictionary')));
-        }
-      }
-
-      // function initDictionary(){
-      //   var defaultDictionary = [
-      //       {word: "foo", definition: "See 'bar'"},
-      //       {word: "bar", definition: "See 'foo'"}
-      //     ];
-      //   return(defaultDictionary);
-      // }
-    </script>
 
 
     <!-- build:js(.) scripts/vendor.js -->
