@@ -120,7 +120,9 @@
         </div>
 <br>
        <!-- Kitten List -->
+
     <div id="kitten-list" class="col-md-12">
+    <div class="row"></div>
     </div>
 
 
@@ -320,10 +322,10 @@ $(function () {
 
     function displayAnimals() {
       var animals = initAnimals();
-      var $kittenList = $("#kitten-list");
+      var $kittenList = $("#kitten-list .row");
       $kittenList.html(" ");
       $.each(animals.kittens, function(index, kitten){
-              $kittenList.append("<div class='box'><div class='text-center'><div class='panel-body'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div></div>");
+              $kittenList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div></div>");
 
             });
 
@@ -343,6 +345,5 @@ $(function () {
       console.log(initAnimals);
     </script>
 
-<div class="row"><div class="col-md-4"><div class='panel-body'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div><div class="col-md-4"><div class='panel-body'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div><div class="col-md-4"><div class='panel-body'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div></div>
 
 </html>
