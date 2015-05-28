@@ -146,12 +146,12 @@
     <div clas="text-center">
         <h1>Kitten For Adoption?</h1>
         <!--Jquery file upload button  -->
-        <span class="btn btn-success fileinput-button">
+<!--         <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
-        <span>Select photo...</span>
+        <span>Select photo...</span> -->
         <!-- The file input field used as target for the file upload widget -->
-        <input id="fileupload" type="file" name="files[]" multiple>
-        </span>
+<!--         <input id="fileupload" type="file" name="files[]" multiple>
+        </span> -->
         <!-- End Jquery fiel upload button -->
           <form id="theForm" action="#">
           <legend for="word">Kitty Name</legend>
@@ -175,16 +175,16 @@
         <!-- The file input field used as target for the file upload widget -->
 <!--         <input id="fileupload" type="file" name="files[]" multiple>
     </span> -->
-    <br>
-    <br>
+<!--     <br>
+    <br> -->
     <!-- The global progress bar -->
-    <div id="progress" class="progress">
+<!--     <div id="progress" class="progress">
         <div class="progress-bar progress-bar-success"></div>
-    </div>
+    </div> -->
     <!-- The container for the uploaded files -->
-    <div id="files" class="files"></div>
+<!--     <div id="files" class="files"></div>
     <br>
-</div>
+</div> -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="scripts/vendor/jquery.ui.widget.js"></script>
@@ -197,29 +197,29 @@
 <script>
 /*jslint unparam: true */
 /*global window, $ */
-$(function () {
-    'use strict';
+// $(function () {
+//     'use strict';
     // Change this to the location of your server-side upload handler:
-    var url = window.location.hostname === 'blueimp.github.io' ?
-                '//jquery-file-upload.appspot.com/' : 'server/php/';
-    $('#fileupload').fileupload({
-        url: url,
-        dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo('#files');
-            });
-        },
-        progressall: function (e, data) {
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            $('#progress .progress-bar').css(
-                'width',
-                progress + '%'
-            );
-        }
-    }).prop('disabled', !$.support.fileInput)
-        .parent().addClass($.support.fileInput ? undefined : 'disabled');
-});
+//     var url = window.location.hostname === 'blueimp.github.io' ?
+//                 '//jquery-file-upload.appspot.com/' : 'server/php/';
+//     $('#fileupload').fileupload({
+//         url: url,
+//         dataType: 'json',
+//         done: function (e, data) {
+//             $.each(data.result.files, function (index, file) {
+//                 $('<p/>').text(file.name).appendTo('#files');
+//             });
+//         },
+//         progressall: function (e, data) {
+//             var progress = parseInt(data.loaded / data.total * 100, 10);
+//             $('#progress .progress-bar').css(
+//                 'width',
+//                 progress + '%'
+//             );
+//         }
+//     }).prop('disabled', !$.support.fileInput)
+//         .parent().addClass($.support.fileInput ? undefined : 'disabled');
+// });
 </script>
 <!-- end Jquery file upload -->
 
@@ -338,6 +338,8 @@ $(function () {
             {"name": "Esther", "age": "2 months", "sex":"F", "Breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
            ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "Breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
            ,{"name": "Lilly", "age": "4 months", "sex":"F", "Breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
+           ,{"name": "Sam", "age": "6 months", "sex":"M", "Breed":"Whatever", "imageUrl":"img/Kitten3.jpg"}
+           ,{"name": "Dwayne", "age": "11 months", "sex":"F", "Breed":"Whatever", "imageUrl":"img/Kitten1.jpg"}
           ]
         };
           return(animals);
