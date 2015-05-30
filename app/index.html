@@ -12,13 +12,18 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.scss">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-  <!-- Bootstrap Carousel CSS -->
+
+<!-- Bootstrap Carousel CSS -->
     <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" media="screen" />
+
+<!--blecherous hack, remove -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
 
     <!-- jQuery -->
     <script src="scripts/jquery.js"></script>
@@ -124,8 +129,9 @@
     </div>
 
 
-<!--     <div class="row">
+<!--<div class="row"> -->
        <div class="text-center">
+         <h2>Kitten For Adoption?</h2>
         <form class="theForm" action="#d">
           <legend for="kitten">Add a Kitten</legend>
           <input type="text" id="kitten"/>
@@ -135,23 +141,23 @@
           <button id="addButton">Add Kitten to Adopt</button>
         </form>
        </div>
-    </div> -->
+  <!--  </div> -->
 
 
 
     <!-- Adding a new "add a kitten" list based off of class example -->
-<div class="container">
+<!-- <div class="container">
     <div clas="text-center">
-        <h1>Kitten For Adoption?</h1>
+        <h1>Kitten For Adoption?</h1> -->
         <!--Jquery file upload button  -->
-        <span class="btn btn-success fileinput-button">
+        <!--<span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
-        <span>Select photo...</span>
+        <span>Select photo...</span> -->
         <!-- The file input field used as target for the file upload widget -->
-        <input id="fileupload" type="file" name="files[]" multiple>
-        </span>
+        <!-- <input id="fileupload" type="file" name="files[]" multiple>
+        </span> -->
         <!-- End Jquery fiel upload button -->
-          <form id="theForm" action="#">
+        <!--  <form id="theForm" action="#">
           <legend for="word">Kitty Name</legend>
           <input type="text" id="word" />
           <legend for="definition">Description</legend>
@@ -162,8 +168,8 @@
     </form>
     <h2>New Adoption List</h2>
     <dl id="wordList"></dl>
-   </div>     
-</div>
+   </div>
+</div> -->
 
 <!-- jquery file upload -->
    <!-- The fileinput-button span is used to style the file input field as button -->
@@ -194,7 +200,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
 /*jslint unparam: true */
-/*global window, $ */
+/*global window, $
 $(function () {
     'use strict';
     // Change this to the location of your server-side upload handler:
@@ -217,55 +223,11 @@ $(function () {
         }
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
-});
+});*/
 </script>
 <!-- end Jquery file upload -->
 
 <!-- stuff for adding kitten descriptions -->
-        <script>
-      $(document).ready( function(){
-        displayDictionary(getDictionary());
-        $("#addButton").click(addWord);
-      });
-
-      function addWord(e) {
-        var entry = {};
-        entry.word = $("#word").val();
-        entry.definition = $("#definition").val();
-        var dictionary = getDictionary();
-        dictionary.push(entry);
-        saveDictionary(dictionary);
-        displayDictionary(getDictionary());
-        e.preventDefault();
-      }
-
-      function displayDictionary(d){
-        $wordList = $('#wordList');
-        $wordList.html(" ");
-        $.each(d, function(index, entry){
-          $wordList.append("<dt>" + entry.word + "</dt><dd>" + entry.definition + "</dd>");
-        });
-      }
-      function saveDictionary(d) {
-        localStorage.setItem('theDictionary', JSON.stringify(d));
-      }
-
-      function getDictionary(){
-        if (localStorage.getItem('theDictionary') === null){
-          return(initDictionary());
-        } else {
-          return(JSON.parse(localStorage.getItem('theDictionary')));
-        }
-      }
-
-      // function initDictionary(){
-      //   var defaultDictionary = [
-      //       {word: "foo", definition: "See 'bar'"},
-      //       {word: "bar", definition: "See 'foo'"}
-      //     ];
-      //   return(defaultDictionary);
-      // }
-    </script>
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -336,6 +298,8 @@ $(function () {
             {"name": "Esther", "age": "2 months", "sex":"F", "Breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
            ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "Breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
            ,{"name": "Lilly", "age": "4 months", "sex":"F", "Breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
+           ,{"name": "Sam", "age": "6 months", "sex":"M", "Breed":"Whatever", "imageUrl":"img/Kitten3.jpg"}
+           ,{"name": "Dwayne", "age": "11 months", "sex":"F", "Breed":"Whatever", "imageUrl":"img/Kitten1.jpg"}
           ]
         };
           return(animals);
