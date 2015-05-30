@@ -1,12 +1,10 @@
-console.log('\'Allo \'Allo!');
-
       $(document).ready( function(){
         displayList(getList());
         $("#addButton").click(addKitten);
       });
 
       function addKitten(e) {
-        var entry = {};
+        var entry = [];
         entry.kitten = $("#kitten").val();
         entry.description = $("#description").val();
         var list = getList();

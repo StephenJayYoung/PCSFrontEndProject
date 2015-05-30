@@ -125,7 +125,9 @@
         </div>
 <br>
        <!-- Kitten List -->
+
     <div id="kitten-list" class="col-md-12">
+    <div class="row"></div>
     </div>
 
 
@@ -150,20 +152,22 @@
     <div clas="text-center">
         <h1>Kitten For Adoption?</h1> -->
         <!--Jquery file upload button  -->
-        <!--<span class="btn btn-success fileinput-button">
+
+<!--         <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
         <span>Select photo...</span> -->
         <!-- The file input field used as target for the file upload widget -->
-        <!-- <input id="fileupload" type="file" name="files[]" multiple>
+<!--         <input id="fileupload" type="file" name="files[]" multiple>
         </span> -->
         <!-- End Jquery fiel upload button -->
-        <!--  <form id="theForm" action="#">
-          <legend for="word">Kitty Name</legend>
-          <input type="text" id="word" />
-          <legend for="definition">Description</legend>
-          <textarea name="definition" id="definition" ></textarea>
+      <form class="theForm" action="#">
+          <legend for="kitten">Add a Kitten</legend>
+          <input type="text" id="kitten"/>
+          <legend for="description">Description</legend>
+          <textarea name="description" id="description"></textarea>
           <br>
-          <button id="addButton">Add It!</button>
+          <button id="addButton">Add Kitten</button>
+        </form>
 
     </form>
     <h2>New Adoption List</h2>
@@ -179,16 +183,16 @@
         <!-- The file input field used as target for the file upload widget -->
 <!--         <input id="fileupload" type="file" name="files[]" multiple>
     </span> -->
-    <br>
-    <br>
+<!--     <br>
+    <br> -->
     <!-- The global progress bar -->
-    <div id="progress" class="progress">
+<!--     <div id="progress" class="progress">
         <div class="progress-bar progress-bar-success"></div>
-    </div>
+    </div> -->
     <!-- The container for the uploaded files -->
-    <div id="files" class="files"></div>
+<!--     <div id="files" class="files"></div>
     <br>
-</div>
+</div> -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="scripts/vendor/jquery.ui.widget.js"></script>
@@ -200,34 +204,36 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
 /*jslint unparam: true */
-/*global window, $
-$(function () {
-    'use strict';
+
+/*global window, $ */
+// $(function () {
+//     'use strict';
     // Change this to the location of your server-side upload handler:
-    var url = window.location.hostname === 'blueimp.github.io' ?
-                '//jquery-file-upload.appspot.com/' : 'server/php/';
-    $('#fileupload').fileupload({
-        url: url,
-        dataType: 'json',
-        done: function (e, data) {
-            $.each(data.result.files, function (index, file) {
-                $('<p/>').text(file.name).appendTo('#files');
-            });
-        },
-        progressall: function (e, data) {
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            $('#progress .progress-bar').css(
-                'width',
-                progress + '%'
-            );
-        }
-    }).prop('disabled', !$.support.fileInput)
-        .parent().addClass($.support.fileInput ? undefined : 'disabled');
-});*/
+//     var url = window.location.hostname === 'blueimp.github.io' ?
+//                 '//jquery-file-upload.appspot.com/' : 'server/php/';
+//     $('#fileupload').fileupload({
+//         url: url,
+//         dataType: 'json',
+//         done: function (e, data) {
+//             $.each(data.result.files, function (index, file) {
+//                 $('<p/>').text(file.name).appendTo('#files');
+//             });
+//         },
+//         progressall: function (e, data) {
+//             var progress = parseInt(data.loaded / data.total * 100, 10);
+//             $('#progress .progress-bar').css(
+//                 'width',
+//                 progress + '%'
+//             );
+//         }
+//     }).prop('disabled', !$.support.fileInput)
+//         .parent().addClass($.support.fileInput ? undefined : 'disabled');
+// });
 </script>
 <!-- end Jquery file upload -->
 
 <!-- stuff for adding kitten descriptions -->
+
 
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -282,10 +288,10 @@ $(function () {
 
     function displayAnimals() {
       var animals = initAnimals();
-      var $kittenList = $("#kitten-list");
+      var $kittenList = $("#kitten-list .row");
       $kittenList.html(" ");
       $.each(animals.kittens, function(index, kitten){
-              $kittenList.append("<div class='box'><div class='text-center'><div class='panel-body'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div></div>");
+              $kittenList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div></div>");
 
             });
 
