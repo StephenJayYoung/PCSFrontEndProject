@@ -5,8 +5,9 @@
 
       function addKitten(e) {
         var entry = [];
-        entry.kitten = $("#kitten").val();
-        entry.description = $("#description").val();
+        entry.name = $("#name").val();
+        entry.breed = $("#breed").val();
+        entry.age = $("#age").val();
         var list = getList();
         list.push(entry);
         saveList(list);
