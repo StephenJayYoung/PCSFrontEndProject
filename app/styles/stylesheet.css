@@ -171,6 +171,7 @@ footer p {
     }
 
     .navbar-nav>li>a {
+        text-align: center;
         line-height: normal;
     }
 
