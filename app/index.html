@@ -155,21 +155,23 @@
        <div class="text-center">
          <h2>Kitten For Adoption?</h2>
         <form class="theForm" action="#d">
-          <legend for="breed">Breed</legend>
-          <input type="text" id="breed"/>
+          <legend for="name">Name</legend>
+          <input type="text" id="name"/>
           <legend for="age">Age</legend>
           <input type="text" id="age"/>
-          <legend for="name">Name</legend>
+          <legend for="breed">Breed</legend>
+          <input type="text" id="breed"/>
+           <legend for="name">Sex</legend>
           <input type="text" id="name"/>
           <br>
           <button id="addButton">Add Kitten to Adopt</button>
         </form>
        </div>
+
+    <h2>Kitten List</h2>
+    <dl id="kittenList"></dl>
   <!--  </div> -->
-  <div class="text-center">
-    <h2>New Adoption List</h2>
-    <dl id="wordList"></dl>
-  </div>  
+
 <!-- jquery file upload -->
    <!-- The fileinput-button span is used to style the file input field as button -->
 <!--     <span class="btn btn-success fileinput-button">
@@ -285,7 +287,7 @@
       var $kittenList = $("#kitten-list .row");
       $kittenList.html(" ");
       $.each(animals.kittens, function(index, kitten){
-              $kittenList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.Breed+"<br>"+kitten.description+"</div></div></div>");
+              $kittenList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'><img class='thumbnail center-block' src='"+kitten.imageUrl+"'+ alt='' height=100 width=100>Name: "+kitten.name+"<br>Age: "+kitten.age+"<br>Sex: "+kitten.sex+"<br>Breed: "+kitten.breed+"<br>"+kitten.description+"</div></div></div>");
 
             });
 

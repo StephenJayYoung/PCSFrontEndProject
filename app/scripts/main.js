@@ -8,6 +8,8 @@
         entry.name = $("#name").val();
         entry.breed = $("#breed").val();
         entry.age = $("#age").val();
+        entry.sex = $("#sex").val();
+        entry.description = $("#description").val();
         var list = getList();
         list.push(entry);
         saveList(list);
@@ -20,7 +22,7 @@
         $kittenList = $('#kittenList');
         $kittenList.html("");
         $.each(d, function(index, entry){
-          $kittenList.append();
+        $kittenList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'><img class='thumbnail center-block' src='"+entry.imageUrl+"'+ alt='' height=100 width=100>Name: "+entry.name+"<br>Age: "+entry.age+"<br>Sex: "+entry.sex+"<br>Breed: "+entry.Breed+"<br>"+entry.description+"</div></div></div>");
         });
       }
 
