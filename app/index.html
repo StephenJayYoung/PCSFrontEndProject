@@ -143,8 +143,6 @@
 
     <!-- Adding a new "add a kitten" list based off of class example -->
 <div class="container">
-    <div clas="text-center">
-        <h1>Kitten For Adoption?</h1>
         <!--Jquery file upload button  -->
 <!--         <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
@@ -153,21 +151,25 @@
 <!--         <input id="fileupload" type="file" name="files[]" multiple>
         </span> -->
         <!-- End Jquery fiel upload button -->
-      <form class="theForm" action="#">
-          <legend for="kitten">Add a Kitten</legend>
-          <input type="text" id="kitten"/>
-          <legend for="description">Description</legend>
-          <textarea name="description" id="description"></textarea>
+<!--<div class="row"> -->
+       <div class="text-center">
+         <h2>Kitten For Adoption?</h2>
+        <form class="theForm" action="#d">
+          <legend for="breed">Breed</legend>
+          <input type="text" id="breed"/>
+          <legend for="age">Age</legend>
+          <input type="text" id="age"/>
+          <legend for="name">Name</legend>
+          <input type="text" id="name"/>
           <br>
-          <button id="addButton">Add Kitten</button>
+          <button id="addButton">Add Kitten to Adopt</button>
         </form>
-
-    </form>
+       </div>
+  <!--  </div> -->
+  <div class="text-center">
     <h2>New Adoption List</h2>
     <dl id="wordList"></dl>
-   </div>     
-</div>
-
+  </div>  
 <!-- jquery file upload -->
    <!-- The fileinput-button span is used to style the file input field as button -->
 <!--     <span class="btn btn-success fileinput-button">
