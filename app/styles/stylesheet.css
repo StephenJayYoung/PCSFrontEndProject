@@ -45,12 +45,14 @@ hr {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 2px;
+
 }
 
 .navbar-nav {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 3px;
+
 }
 
 .img-full {
@@ -150,6 +152,7 @@ footer p {
 
     .navbar {
         border-radius: 0;
+
     }
 
     .navbar-header {
@@ -158,12 +161,14 @@ footer p {
 
     .navbar {
         min-height: 0;
+
     }
 
     .navbar-default {
         border: none;
         background: #fff;
         background: rgba(255,255,255,0.9);
+
     }
 
     .nav>li>a {
@@ -180,6 +185,7 @@ footer p {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
+        text-align: center
     }
 }
 
