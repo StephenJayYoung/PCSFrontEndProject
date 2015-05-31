@@ -12,18 +12,13 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.scss">
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-
-<!-- Bootstrap Carousel CSS -->
+  <!-- Bootstrap Carousel CSS -->
     <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" media="screen" />
-
-<!--blecherous hack, remove -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
 
     <!-- jQuery -->
     <script src="scripts/jquery.js"></script>
@@ -131,30 +126,26 @@
     </div>
 
 
-<!--<div class="row"> -->
+<!--     <div class="row">
        <div class="text-center">
-         <h2>Kitten For Adoption?</h2>
         <form class="theForm" action="#d">
-          <legend for="breed">Breed</legend>
-          <input type="text" id="breed"/>
-          <legend for="age">Age</legend>
-          <input type="text" id="age"/>
-          <legend for="name">Name</legend>
-          <input type="text" id="name"/>
+          <legend for="kitten">Add a Kitten</legend>
+          <input type="text" id="kitten"/>
+          <legend for="description">Description</legend>
+          <textarea name="description" id="description"></textarea>
           <br>
           <button id="addButton">Add Kitten to Adopt</button>
         </form>
        </div>
-  <!--  </div> -->
+    </div> -->
 
 
 
     <!-- Adding a new "add a kitten" list based off of class example -->
-<!-- <div class="container">
+<div class="container">
     <div clas="text-center">
-        <h1>Kitten For Adoption?</h1> -->
+        <h1>Kitten For Adoption?</h1>
         <!--Jquery file upload button  -->
-
 <!--         <span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
         <span>Select photo...</span> -->
@@ -162,7 +153,20 @@
 <!--         <input id="fileupload" type="file" name="files[]" multiple>
         </span> -->
         <!-- End Jquery fiel upload button -->
+      <form class="theForm" action="#">
+          <legend for="kitten">Add a Kitten</legend>
+          <input type="text" id="kitten"/>
+          <legend for="description">Description</legend>
+          <textarea name="description" id="description"></textarea>
+          <br>
+          <button id="addButton">Add Kitten</button>
+        </form>
 
+    </form>
+    <h2>New Adoption List</h2>
+    <dl id="wordList"></dl>
+   </div>     
+</div>
 
 <!-- jquery file upload -->
    <!-- The fileinput-button span is used to style the file input field as button -->
@@ -193,7 +197,6 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
 /*jslint unparam: true */
-
 /*global window, $ */
 // $(function () {
 //     'use strict';
