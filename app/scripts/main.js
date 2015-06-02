@@ -4,7 +4,7 @@
       });
 
       function addKitten(e) {
-        var entry = [];
+        var entry = {};
         entry.name = $("#name").val();
         entry.breed = $("#breed").val();
         entry.age = $("#age").val();
@@ -22,7 +22,7 @@
         $adoptList = $('#adoptList');
         $adoptList.html("");
         $.each(d, function(index, entry){
-        $adoptList.append();
+        $adoptList.append("<dt>" + entry.name + "</dt><dd>" + entry.breed + "</dd>");
         });
       }
 
