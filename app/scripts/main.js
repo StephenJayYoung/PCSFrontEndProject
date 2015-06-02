@@ -19,10 +19,10 @@
       }
 
       function displayList(d){
-        $kittenList = $('#kittenList');
-        $kittenList.html("");
+        $adoptList = $('#adoptList');
+        $adoptList.html("");
         $.each(d, function(index, entry){
-        $kittenList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'><img class='thumbnail center-block' src='"+entry.imageUrl+"'+ alt='' height=100 width=100>Name: "+entry.name+"<br>Age: "+entry.age+"<br>Sex: "+entry.sex+"<br>Breed: "+entry.breed+"<br>"+entry.description+"</div></div></div>");
+        $adoptList.append();
         });
       }
 
@@ -37,14 +37,14 @@
           return(JSON.parse(localStorage.getItem('theList')));
         }
       }
-
-      function initList(){
-        var defaultList = [
-          {"name": "Esther", "age": "2 months", "sex":"F", "breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
-         ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
-         ,{"name": "Lilly", "age": "4 months", "sex":"F", "breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
-         ,{"name": "Sam", "age": "6 months", "sex":"M", "breed":"Whatever", "imageUrl":"img/Kitten3.jpg"}
-         ,{"name": "Dwayne", "age": "11 months", "sex":"F", "breed":"Whatever", "imageUrl":"img/Kitten1.jpg"}
-          ];
-          return(defaultList);
-      }
+      //
+      // function initList(){
+      //   var defaultList = [
+      //     {"name": "Esther", "age": "2 months", "sex":"F", "breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
+      //    ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
+      //    ,{"name": "Lilly", "age": "4 months", "sex":"F", "breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
+      //    ,{"name": "Sam", "age": "6 months", "sex":"M", "breed":"Whatever", "imageUrl":"img/Kitten3.jpg"}
+      //    ,{"name": "Dwayne", "age": "11 months", "sex":"F", "breed":"Whatever", "imageUrl":"img/Kitten1.jpg"}
+      //     ];
+      //     return(defaultList);
+      // }
