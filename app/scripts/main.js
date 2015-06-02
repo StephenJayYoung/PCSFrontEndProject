@@ -22,7 +22,7 @@
         $adoptList = $('#adoptList');
         $adoptList.html("");
         $.each(d, function(index, entry){
-        $adoptList.append("<dt>" + entry.name + "</dt><dd>" + entry.breed + "</dd>");
+        $adoptList.append("<div class='col-md-4'><div class='panel-body'><div class='text-center'>Name: "+entry.name+"<br>Age: "+entry.age+"<br>Sex: "+entry.sex+"<br>Breed: "+entry.breed+"<br>"+entry.description+"</div></div></div>");
         });
       }
 
