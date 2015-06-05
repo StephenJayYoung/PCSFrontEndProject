@@ -40,11 +40,11 @@
       //
       function initList(){
         var defaultList = [
-          {"name": "Esther", "age": "2 months", "sex":"F", "breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
-         ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
-         ,{"name": "Lilly", "age": "4 months", "sex":"F", "breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
-         ,{"name": "Sam", "age": "6 months", "sex":"M", "breed":"Whatever", "imageUrl":"img/Kitten3.jpg"}
-         ,{"name": "Dwayne", "age": "11 months", "sex":"F", "breed":"Whatever", "imageUrl":"img/Kitten1.jpg"}
+         //  {"name": "Esther", "age": "2 months", "sex":"F", "breed":"Domestic Short Hair", "imageUrl":"img/Kitten1.jpg", "description": "Esther likes long walks, playing with catnip, and be a snugglebunny"}
+         // ,{"name": "Garfield", "age": "3 weeks", "sex":"M", "breed":"Orange", "imageUrl":"img/Kitten2.jpg"}
+         // ,{"name": "Lilly", "age": "4 months", "sex":"F", "breed":"Persian", "imageUrl":"img/Kitten3.jpg"}
+         // ,{"name": "Sam", "age": "6 months", "sex":"M", "breed":"Whatever", "imageUrl":"img/Kitten3.jpg"}
+         ,{"name": {}, "age": {}, "sex":{}, "breed":""}
           ];
           return(defaultList);
       }
